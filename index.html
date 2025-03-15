@@ -8,7 +8,7 @@
   <meta name="description" content="HausProfi Al Hakeem – Ihr zuverlässiger Partner für Möbelmontage, Küchenmontage, Umzugsservice und Hausmeisterservice in Aschaffenburg und Umgebung.">
   <meta name="keywords" content="Handwerker, Möbelmontage, Küchenmontage, Umzugsservice, Hausmeisterservice, Aschaffenburg, Al Hakeem, Montage, Transport, Service">
   <style>
-    /* Grundlayout, Farben & Schrift */
+    /* ----------------------------- GRUNDLEGENDE STYLES ----------------------------- */
     * {
       margin: 0;
       padding: 0;
@@ -19,10 +19,27 @@
       background-color: #fff;
       color: #333;
       line-height: 1.5;
+      position: relative;
     }
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    /* Overlay: Wiederholtes PNG über allem 
+       sample.png = 750×750px (bitte ins selbe Verzeichnis legen) */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Klicks werden durchgereicht */
+      background: url('sample.png') repeat;
+      background-size: 750px 750px; /* Größe der Kachel */
+      opacity: 0.2; /* Transparenz nach Bedarf anpassen */
+      z-index: 9999; /* Ganz oben */
     }
 
     /* HEADER */
@@ -64,8 +81,21 @@
     .hero p {
       font-size: 1.1em;
       max-width: 700px;
-      margin: 0.5em auto;
+      margin: 0.5em auto 1em auto;
       line-height: 1.6;
+    }
+    .hero .whatsapp-btn {
+      display: inline-block;
+      background-color: #25d366; /* WhatsApp-Grün */
+      color: #fff;
+      padding: 0.8em 1.2em;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 0.5em;
+      transition: background-color 0.3s;
+    }
+    .hero .whatsapp-btn:hover {
+      background-color: #20b858;
     }
 
     /* ABSCHNITT WRAPPER */
@@ -197,7 +227,7 @@
     .kontakt a.phone:hover, .kontakt a.email:hover {
       color: #ffcc00;
     }
-    .whatsapp-btn {
+    .whatsapp-btn-lower {
       display: inline-block;
       background-color: #25d366; /* WhatsApp-Grün */
       color: #fff;
@@ -207,7 +237,7 @@
       margin-top: 1em;
       transition: background-color 0.3s;
     }
-    .whatsapp-btn:hover {
+    .whatsapp-btn-lower:hover {
       background-color: #20b858;
     }
 
@@ -245,9 +275,8 @@
 </head>
 <body>
 
-  <!-- HEADER mit Logo -->
+  <!-- HEADER -->
   <header>
-    <!-- Logo: Benenne die Datei in "hausprofi-logo.png" um und lege sie neben diese HTML -->
     <img 
       src="hausprofi-logo.png" 
       alt="HausProfi Al Hakeem Logo" 
@@ -260,7 +289,7 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO: WhatsApp Button -->
   <section class="hero">
     <h1>HausProfi – Al Hakeem</h1>
     <p>
@@ -268,6 +297,15 @@
       und Hausmeisterarbeiten – nicht nur in Aschaffenburg, sondern auch <br>
       im gesamten Rhein-Main-Gebiet und darüber hinaus.
     </p>
+    <!-- WhatsApp-Button gleich im Hero -->
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/4917632815506"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp Chat
+    </a>
   </section>
 
   <!-- ÜBER UNS -->
@@ -376,9 +414,9 @@
         Email: hausprofi.aschaffenburg@gmail.com
       </a>
     </p>
-    <p>Für kurze Rückfragen können Sie auch per WhatsApp schreiben:</p>
+    <p>Für kurze Rückfragen können Sie natürlich auch hier per WhatsApp schreiben:</p>
     <a 
-      class="whatsapp-btn" 
+      class="whatsapp-btn-lower" 
       href="https://wa.me/4917632815506" 
       target="_blank" 
       rel="noopener"
@@ -391,7 +429,6 @@
   <footer>
     <p>&copy; 2025 HausProfi – Al Hakeem. Alle Rechte vorbehalten.</p>
     <p>
-      <!-- Verlinke hier deine separaten Seiten für Impressum und Datenschutz -->
       <a href="impressum.html">Impressum</a> | 
       <a href="datenschutz.html">Datenschutz</a>
     </p>
