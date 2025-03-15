@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HausProfi – Al Hakeem | Montage & Service</title>
+  <!-- Meta-Description für SEO -->
+  <meta name="description" content="HausProfi Al Hakeem – Ihr zuverlässiger Partner für Möbelmontage, Küchenmontage, Umzugsservice und Hausmeisterservice in Aschaffenburg und Umgebung.">
+  <meta name="keywords" content="Handwerker, Möbelmontage, Küchenmontage, Umzugsservice, Hausmeisterservice, Aschaffenburg, Al Hakeem, Montage, Transport, Service">
+  <style>
+    /* Grundlayout, Farben & Schrift */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+      line-height: 1.5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #000; /* Schwarz */
+      padding: 1em;
+      text-align: center;
+    }
+    header .logo {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+    nav {
+      margin-top: 1em;
+    }
+    nav a {
+      color: #ffcc00; /* Gelb */
+      font-weight: bold;
+      margin: 0 0.8em;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* HERO-BEREICH */
+    .hero {
+      background-color: #111; /* dunkles Grau/Schwarz */
+      color: #ffcc00;        /* Gelb */
+      text-align: center;
+      padding: 3em 1em 2em 1em;
+    }
+    .hero h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    .hero p {
+      font-size: 1.1em;
+      max-width: 700px;
+      margin: 0.5em auto;
+      line-height: 1.6;
+    }
+
+    /* ABSCHNITT WRAPPER */
+    section {
+      max-width: 1200px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    section h2 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+      color: #000;
+      text-align: center;
+    }
+
+    /* ÜBER UNS */
+    .ueber-uns p {
+      max-width: 800px;
+      margin: 0.5em auto;
+      line-height: 1.6;
+      color: #555;
+      text-align: center;
+    }
+
+    /* WARUM WIR */
+    .why-us {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      padding: 2em;
+      margin-top: 2em;
+    }
+    .why-us h3 {
+      color: #000;
+      font-size: 1.4em;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    .why-us ul {
+      list-style: none;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .why-us li {
+      margin: 0.8em 0;
+      line-height: 1.6;
+      color: #555;
+    }
+    .why-us li::before {
+      content: "• ";
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* LEISTUNGEN */
+    .leistungen {
+      margin-top: 2em;
+    }
+    .leistungen p {
+      max-width: 800px;
+      margin: 0.5em auto 2em auto;
+      text-align: center;
+      line-height: 1.6;
+      color: #555;
+    }
+    .leistungen-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2em;
+      margin-top: 2em;
+    }
+    .leistung-block {
+      background-color: #ffcc00;
+      color: #000;
+      border-radius: 5px;
+      padding: 1.2em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .leistung-block:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .leistung-block h3 {
+      font-size: 1.3em;
+      margin-bottom: 0.5em;
+    }
+    .leistung-block p {
+      line-height: 1.4;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+    .bullet-list {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 1.8em;
+      margin: 0.5em 0;
+      line-height: 1.4;
+    }
+    .bullet-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* KONTAKT */
+    .kontakt {
+      text-align: center;
+      margin-top: 3em;
+    }
+    .kontakt p {
+      max-width: 800px;
+      margin: 0.5em auto;
+      color: #555;
+      line-height: 1.6;
+    }
+    .kontakt a.phone, .kontakt a.email {
+      display: inline-block;
+      margin: 0.5em 1em;
+      color: #000;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .kontakt a.phone:hover, .kontakt a.email:hover {
+      color: #ffcc00;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25d366; /* WhatsApp-Grün */
+      color: #fff;
+      padding: 0.8em 1.2em;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 1em;
+      transition: background-color 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background-color: #20b858;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+      margin-top: 3em;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media(min-width: 768px) {
+      .leistungen-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(min-width: 1024px) {
+      .leistungen-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER mit Logo -->
+  <header>
+    <!-- Logo: Benenne die Datei in "hausprofi-logo.png" um und lege sie neben diese HTML -->
+    <img 
+      src="hausprofi-logo.png" 
+      alt="HausProfi Al Hakeem Logo" 
+      class="logo"
+    >
+    <nav>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>HausProfi – Al Hakeem</h1>
+    <p>
+      Ihr Experte für Möbelmontage, Küchenmontage, Umzugsservice <br>
+      und Hausmeisterarbeiten – nicht nur in Aschaffenburg, sondern auch <br>
+      im gesamten Rhein-Main-Gebiet und darüber hinaus.
+    </p>
+  </section>
+
+  <!-- ÜBER UNS -->
+  <section class="ueber-uns" id="ueber-uns">
+    <h2>Über uns</h2>
+    <p>
+      HausProfi Al Hakeem ist Ihr seriöser Dienstleister für vielfältige Handwerks- 
+      und Serviceaufgaben rund ums Haus. Wir legen größten Wert auf Qualität, 
+      Zuverlässigkeit und faire Preise. Egal, ob Sie in Aschaffenburg oder anderswo 
+      im Rhein-Main-Gebiet Unterstützung benötigen – wir sind für Sie da.
+    </p>
+    <div class="why-us">
+      <h3>Warum HausProfi Al Hakeem?</h3>
+      <ul>
+        <li>Langjährige Erfahrung in verschiedenen Handwerksbereichen</li>
+        <li>Persönliche Beratung & maßgeschneiderte Lösungen</li>
+        <li>Faire Preise & transparente Abwicklung</li>
+        <li>Flexible Terminabsprachen & schnelle Umsetzung</li>
+        <li>Überregionale Einsätze – auch bundesweit möglich</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section class="leistungen" id="leistungen">
+    <h2>Unsere Leistungen</h2>
+    <p>
+      Hier finden Sie alle wichtigen Informationen zu unseren Angeboten. 
+      Jeder Bereich ist übersichtlich in Stichpunkten aufgelistet, damit Sie 
+      schnell erkennen, worauf es ankommt und wie wir Ihnen helfen können.
+    </p>
+
+    <div class="leistungen-list">
+      <!-- MÖBELMONTAGE -->
+      <div class="leistung-block">
+        <h3>Möbelmontage</h3>
+        <p>
+          Wir montieren Ihre Möbel fachgerecht – von Kommoden über 
+          Schränke bis hin zu großen Wohnlandschaften.
+        </p>
+        <ul class="bullet-list">
+          <li>Fachgerechter Auf- und Abbau</li>
+          <li>Sicherer Transport aus Möbelhäusern oder alten Wohnungen</li>
+          <li>Stabile Montage für langfristige Nutzung</li>
+          <li>Optionaler Entsorgungsservice für Alt-Möbel</li>
+        </ul>
+      </div>
+
+      <!-- KÜCHENMONTAGE -->
+      <div class="leistung-block">
+        <h3>Küchenmontage</h3>
+        <p>
+          Damit Ihre Küche perfekt passt, übernehmen wir Planung, Aufbau und Anschluss 
+          aller Komponenten – sorgfältig und stressfrei.
+        </p>
+        <ul class="bullet-list">
+          <li>Präzises Ausmessen & Planung Ihrer Küche</li>
+          <li>Montage von Schränken, Arbeitsplatten & Elektrogeräten</li>
+          <li>Fachgerechte Anschlüsse (Wasser, Strom, Abwasser)</li>
+          <li>Anpassung bestehender Küchen an neue Räume</li>
+        </ul>
+      </div>
+
+      <!-- UMZUGSSERVICE -->
+      <div class="leistung-block">
+        <h3>Umzugsservice</h3>
+        <p>
+          Ein Rundum-Paket für Ihren Umzug – wir übernehmen Abbau, Transport und Wiederaufbau, 
+          damit Sie sorglos ins neue Heim kommen.
+        </p>
+        <ul class="bullet-list">
+          <li>Organisation & Koordination Ihres Umzugs</li>
+          <li>Abbau und Aufbau Ihrer Möbel inkl. sicherer Verpackung</li>
+          <li>Transport auch über größere Distanzen möglich</li>
+          <li>Flexible Terminplanung nach Ihren Bedürfnissen</li>
+        </ul>
+      </div>
+
+      <!-- HAUSMEISTERSERVICE -->
+      <div class="leistung-block">
+        <h3>Hausmeisterservice</h3>
+        <p>
+          Ob Privathaushalt oder Gewerbeobjekt: Wir halten Ihre Immobilie in Schuss 
+          und übernehmen regelmäßige Kontrollen und kleinere Reparaturen.
+        </p>
+        <ul class="bullet-list">
+          <li>Regelmäßige Pflege & Überwachung der Immobilie</li>
+          <li>Kleinreparaturen, Reinigungsarbeiten & Winterdienst</li>
+          <li>Koordination weiterer Fachfirmen bei Bedarf</li>
+          <li>Schnelle Reaktionszeiten bei Notfällen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="kontakt" id="kontakt">
+    <h2>Kontakt</h2>
+    <p>
+      Benötigen Sie mehr Informationen oder möchten ein Angebot anfordern? 
+      Dann schreiben Sie uns oder rufen Sie an. Wir freuen uns auf Ihre Anfrage!
+    </p>
+    <p>
+      <a class="phone" href="tel:+4917632815506">Tel: 0176&nbsp;32815506</a> 
+      <a class="email" href="mailto:hausprofi.aschaffenburg@gmail.com">
+        Email: hausprofi.aschaffenburg@gmail.com
+      </a>
+    </p>
+    <p>Für kurze Rückfragen können Sie auch per WhatsApp schreiben:</p>
+    <a 
+      class="whatsapp-btn" 
+      href="https://wa.me/4917632815506" 
+      target="_blank" 
+      rel="noopener"
+    >
+      WhatsApp Chat
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 HausProfi – Al Hakeem. Alle Rechte vorbehalten.</p>
+    <p>
+      <!-- Verlinke hier deine separaten Seiten für Impressum und Datenschutz -->
+      <a href="impressum.html">Impressum</a> | 
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+  </footer>
+
+</body>
+</html>
